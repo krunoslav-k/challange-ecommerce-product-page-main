@@ -56,4 +56,44 @@ header {
 .avatar {
   width: 3rem;
   height: 3rem;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 5rem 3rem;
+}
+
+.product-images-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+}
+.product-images-container img {
+  border-radius: 14px;
+}
+
+.main-image {
+  width: 360px;
+  margin-bottom: 1rem;
+}
+
+.thumbnails-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.thumbnail {
+  width: 78px;
+}
+
+.product-details-container {
+  width: 50%;
 }/*# sourceMappingURL=style.css.map */
