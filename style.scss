@@ -2,3 +2,47 @@
 @import "./base/typography";
 @import "./base/variables";
 @import "./base/abstracts";
+
+body {
+  width: 75vw;
+  margin: 0 auto;
+}
+
+//header
+
+header {
+  @include flex;
+  justify-content: space-between;
+  padding: 2rem 0 2rem 0;
+  border-bottom: 1px solid $grayish-blue;
+}
+
+.nav-panel {
+  @include flex;
+}
+
+.nav-list {
+  @include flex;
+  list-style: none;
+  margin-left: 2rem;
+}
+
+.nav-item {
+  margin: 1rem;
+  color: $dark-grayish-blue;
+}
+
+.user-panel {
+  @include flex;
+  gap: 2rem;
+}
+
+.avatar {
+  width: 3rem;
+  height: 3rem;
+}
+
+// main
+
+main {
+}
