@@ -99,6 +99,7 @@ main {
 }
 
 .brand-name {
+  margin-bottom: 1rem;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 0.8rem;
@@ -107,17 +108,20 @@ main {
 }
 
 .product-name {
+  margin-bottom: 1.5rem;
   font-weight: 700;
   font-size: 2.5rem;
   line-height: 2.75rem;
 }
 
 .product-description {
+  margin-bottom: 1.3rem;
   color: hsl(219, 9%, 45%);
   line-height: 1.5rem;
 }
 
 .product-price-wrapper {
+  margin-bottom: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -130,7 +134,8 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  gap: 2rem;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 .current-price {
@@ -157,6 +162,8 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  justify-content: flex-start;
+  gap: 14px;
 }
 
 .quantity-wrapper {
@@ -177,6 +184,11 @@ main {
 }
 
 .add-to-cart-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
   height: 3rem;
   width: 50%;
   font-weight: 700;
@@ -185,4 +197,9 @@ main {
   border-radius: 6px;
   background-color: hsl(26, 100%, 55%);
   position: relative;
+}
+
+.cart-icon {
+  width: 1rem;
+  height: 1rem;
 }/*# sourceMappingURL=style.css.map */
