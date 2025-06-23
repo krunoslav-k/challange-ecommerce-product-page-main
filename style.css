@@ -91,7 +91,25 @@ main {
 }
 
 .thumbnail {
+  display: block;
+  height: 78px;
   width: 78px;
+}
+
+.thumbnail-wrapper {
+  position: relative;
+}
+
+.selected-thumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1.5px solid hsl(26, 100%, 55%);
+  border-radius: 14px;
+  background-color: rgba(255, 255, 255, 0.75);
 }
 
 .product-details-container {
