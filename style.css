@@ -96,4 +96,93 @@ main {
 
 .product-details-container {
   width: 50%;
+}
+
+.brand-name {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  color: hsl(219, 9%, 45%);
+}
+
+.product-name {
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 2.75rem;
+}
+
+.product-description {
+  color: hsl(219, 9%, 45%);
+  line-height: 1.5rem;
+}
+
+.product-price-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.current-price-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.current-price {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.discount {
+  padding: 5px 10px;
+  border-radius: 7px;
+  font-size: 0.9rem;
+  background-color: hsl(0, 0%, 0%);
+  color: hsl(0, 0%, 100%);
+}
+
+.regular-price {
+  font-weight: 700;
+  color: hsl(219, 9%, 45%);
+  text-decoration: line-through;
+}
+
+.product-buying-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.quantity-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 10px;
+  height: 3rem;
+  width: 30%;
+  border-radius: 6px;
+  background-color: hsl(223, 64%, 98%);
+}
+
+.quantity-amount {
+  font-weight: 700;
+}
+
+.add-to-cart-btn {
+  height: 3rem;
+  width: 50%;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  background-color: hsl(26, 100%, 55%);
+  position: relative;
 }/*# sourceMappingURL=style.css.map */

@@ -75,3 +75,80 @@ main {
 .product-details-container {
   width: 50%;
 }
+
+.brand-name {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  color: $dark-grayish-blue;
+}
+
+.product-name {
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 2.75rem;
+}
+
+.product-description {
+  color: $dark-grayish-blue;
+  line-height: 1.5rem;
+}
+
+.product-price-wrapper {
+  @include flex(column);
+  align-items: flex-start;
+}
+
+.current-price-wrapper {
+  @include flex;
+  gap: 2rem;
+}
+
+.current-price {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.discount {
+  padding: 5px 10px;
+  border-radius: 7px;
+  font-size: 0.9rem;
+  background-color: $black;
+  color: $white;
+}
+
+.regular-price {
+  font-weight: 700;
+  color: $dark-grayish-blue;
+  text-decoration: line-through;
+}
+
+.product-buying-wrapper {
+  @include flex;
+}
+
+.quantity-wrapper {
+  @include flex;
+  justify-content: space-around;
+  gap: 10px;
+  height: 3rem;
+  width: 30%;
+  border-radius: 6px;
+  background-color: $lightish-blue;
+}
+
+.quantity-amount {
+  font-weight: 700;
+}
+
+.add-to-cart-btn {
+  height: 3rem;
+  width: 50%;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  background-color: $orange;
+  position: relative;
+}
