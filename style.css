@@ -64,6 +64,7 @@ main {
   align-items: center;
   flex-direction: row;
   padding: 5rem 3rem;
+  position: relative;
 }
 
 .product-images-container {
@@ -220,4 +221,13 @@ main {
 .cart-icon {
   width: 1rem;
   height: 1rem;
+}
+
+.dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100px;
+  width: 100px;
+  background-color: rgba(0, 0, 0, 0.75);
 }/*# sourceMappingURL=style.css.map */
