@@ -190,7 +190,7 @@ main {
 // lightbox
 
 .lightbox {
-  @include flex;
+  @include flex(column);
   height: 100%;
   width: 100%;
   position: fixed;
@@ -198,6 +198,9 @@ main {
   left: 0;
   background-color: rgba(0, 0, 0, 0.75);
   display: none;
+  & img {
+    border-radius: 14px;
+  }
 }
 
 .active {
@@ -207,5 +210,5 @@ main {
 .lightbox-main-image {
   width: 450px;
   height: 450px;
-  border-radius: 14px;
+  margin-bottom: 30px;
 }
