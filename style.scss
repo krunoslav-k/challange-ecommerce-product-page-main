@@ -62,6 +62,7 @@ main {
 .main-image {
   width: 360px;
   margin-bottom: 1rem;
+  cursor: pointer;
 }
 
 .thumbnails-wrapper {
@@ -188,14 +189,23 @@ main {
 
 // lightbox
 
-.dark-overlay {
-  position: absolute;
+.lightbox {
+  @include flex;
+  height: 100%;
+  width: 100%;
+  position: fixed;
   top: 0;
   left: 0;
-  height: 100px;
-  width: 100px;
   background-color: rgba(0, 0, 0, 0.75);
+  display: none;
 }
 
-.lightbox-container {
+.active {
+  display: flex;
+}
+
+.lightbox-main-image {
+  width: 450px;
+  height: 450px;
+  border-radius: 14px;
 }
