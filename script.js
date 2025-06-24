@@ -5,13 +5,13 @@ document.body.append(lightboxEl);
 const mainImage = document.querySelector(".main-image");
 const lightboxMainImage = document.createElement("img");
 const thumbnailEls = document.querySelectorAll(".thumbnail");
+const lightboxThumbnailsWrapper = document.createElement("div");
+lightboxThumbnailsWrapper.classList.add("thumbnails-wrapper");
 const lightboxThumbnails = [];
 
 mainImage.addEventListener("click", () => {
   lightboxEl.classList.add("active");
-  lightboxMainImage.classList.add("lightbox-main-image");
-  lightboxMainImage.src = mainImage.src;
-  lightboxEl.append(lightboxMainImage);
+  renderMainImage();
   renderThumbnails();
 });
 
@@ -27,22 +27,24 @@ lightboxEl.addEventListener("click", (e) => {
 thumbnailEls.forEach((thumbnailEl) => {
   const wrapper = document.createElement("div");
   wrapper.classList.add("thumbnail-wrapper");
+
   const img = document.createElement("img");
   img.classList.add("thumbnail");
   img.src = thumbnailEl.src;
+
   wrapper.append(img);
   lightboxThumbnails.push(wrapper);
 });
 
-// za thmbnails (mozda u neku funkciju ili vjv razdijeliti u vise funkcija)
-
-const lightboxThumbnailsWrapper = document.createElement("div");
-lightboxThumbnailsWrapper.classList.add("thumbnails-wrapper");
+function renderMainImage() {
+  lightboxMainImage.src = mainImage.src;
+  lightboxMainImage.classList.add("lightbox-main-image");
+  lightboxEl.append(lightboxMainImage);
+}
 
 function renderThumbnails() {
   lightboxThumbnails.forEach((thumbnail) => {
     lightboxThumbnailsWrapper.append(thumbnail);
   });
   lightboxMainImage.after(lightboxThumbnailsWrapper);
-  console.log(lightboxMainImage);
 }
