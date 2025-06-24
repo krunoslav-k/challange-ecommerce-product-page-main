@@ -207,8 +207,42 @@ main {
   display: flex;
 }
 
+.lightbox-main-image-wrapper {
+  position: relative;
+}
+
 .lightbox-main-image {
   width: 450px;
   height: 450px;
   margin-bottom: 30px;
+}
+
+.lightbox-close-button {
+  position: absolute;
+  top: -36px;
+  left: 440px;
+  height: 1.35rem;
+  width: 1.35rem;
+  cursor: pointer;
+}
+
+.lightbox-button {
+  @include flex;
+  position: absolute;
+  top: 200px;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  background-color: $white;
+  cursor: pointer;
+}
+
+.lightbox-previous-button-wrapper {
+  @extend .lightbox-button;
+  left: -25px;
+}
+
+.lightbox-next-button-wrapper {
+  @extend .lightbox-button;
+  left: 425px;
 }

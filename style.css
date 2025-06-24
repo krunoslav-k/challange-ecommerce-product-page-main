@@ -245,8 +245,43 @@ main {
   display: flex;
 }
 
+.lightbox-main-image-wrapper {
+  position: relative;
+}
+
 .lightbox-main-image {
   width: 450px;
   height: 450px;
   margin-bottom: 30px;
+}
+
+.lightbox-close-button {
+  position: absolute;
+  top: -36px;
+  left: 440px;
+  height: 1.35rem;
+  width: 1.35rem;
+  cursor: pointer;
+}
+
+.lightbox-button, .lightbox-next-button-wrapper, .lightbox-previous-button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: absolute;
+  top: 200px;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  background-color: hsl(0, 0%, 100%);
+  cursor: pointer;
+}
+
+.lightbox-previous-button-wrapper {
+  left: -25px;
+}
+
+.lightbox-next-button-wrapper {
+  left: 425px;
 }/*# sourceMappingURL=style.css.map */
