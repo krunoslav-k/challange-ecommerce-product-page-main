@@ -14,6 +14,8 @@ const previousButtonWrapper = document.createElement("div");
 const previousButton = document.createElement("img");
 const nextButtonWrapper = document.createElement("div");
 const nextButton = document.createElement("img");
+const lightboxThumbnailSelectionEl = document.createElement("div");
+lightboxThumbnailSelectionEl.classList.add("selected-thumbnail");
 
 mainImage.addEventListener("click", () => {
   lightboxEl.classList.add("active");
@@ -41,6 +43,8 @@ thumbnailEls.forEach((thumbnailEl) => {
   const img = document.createElement("img");
   img.classList.add("thumbnail");
   img.src = thumbnailEl.src;
+  const imgSrcToFullImage = thumbnailEl.getAttribute("srcToFullImage");
+  img.setAttribute("srcToFullImage", imgSrcToFullImage);
   lightboxThumbnails.push(img);
 
   wrapper.append(img);
@@ -50,6 +54,11 @@ thumbnailEls.forEach((thumbnailEl) => {
 function closeLightbox() {
   lightboxEl.classList.remove("active");
   lightboxMainImage.remove();
+  lightboxThumbnailsWrapper.remove();
+  closeButton.remove();
+  previousButtonWrapper.remove();
+  nextButtonWrapper.remove();
+  lightboxThumbnailSelectionEl.remove();
 }
 
 function renderMainImage() {
@@ -86,7 +95,12 @@ function renderThumbnails() {
 }
 
 function renderSelectedThumbnail() {
-  const lightboxThumbnailSelectionEl = document.createElement("div");
-  lightboxThumbnailSelectionEl.classList.add("selected-thumbnail");
-  lightboxThumbnails[0].after(lightboxThumbnailSelectionEl);
+  const baseURL = window.location.origin;
+  const selectedThumbnail = lightboxThumbnails.find((el) => {
+    const relativePath = el.getAttribute("srcToFullImage");
+    const absoluteURL = new URL(relativePath, baseURL).href;
+    return absoluteURL === mainImage.src;
+  });
+
+  selectedThumbnail.after(lightboxThumbnailSelectionEl);
 }
