@@ -10,13 +10,12 @@ const thumbnailEls = document.querySelectorAll(".thumbnail");
 const lightboxThumbnailsWrapper = document.createElement("div");
 lightboxThumbnailsWrapper.classList.add("thumbnails-wrapper");
 const lightboxThumbnailWrappers = [];
+const lightboxThumbnails = [];
 const closeButton = document.createElement("img");
 const previousButtonWrapper = document.createElement("div");
 const previousButton = document.createElement("img");
 const nextButtonWrapper = document.createElement("div");
 const nextButton = document.createElement("img");
-
-const lightboxThumbnails = [];
 
 mainImage.addEventListener("click", () => {
   lightboxEl.classList.add("active");
@@ -44,6 +43,7 @@ thumbnailEls.forEach((thumbnailEl) => {
   const img = document.createElement("img");
   img.classList.add("thumbnail");
   img.src = thumbnailEl.src;
+  lightboxThumbnails.push(img);
 
   wrapper.append(img);
   lightboxThumbnailWrappers.push(wrapper);
@@ -80,13 +80,15 @@ function renderButtons() {
 }
 
 function renderThumbnails() {
-  console.log(lightboxThumbnails);
-  lightboxThumbnails = lightboxThumbnailWrappers.map((wrapper) =>
-    wrapper.querySelector("img")
-  );
-
+  renderSelectedThumbnail();
   lightboxThumbnailWrappers.forEach((thumbnailWrapper) => {
     lightboxThumbnailsWrapper.append(thumbnailWrapper);
   });
   lightboxMainImageWrapper.after(lightboxThumbnailsWrapper);
+}
+
+function renderSelectedThumbnail() {
+  const lightboxThumbnailSelectionEl = document.createElement("div");
+  lightboxThumbnailSelectionEl.classList.add("selected-thumbnail");
+  lightboxThumbnails[0].after(lightboxThumbnailSelectionEl);
 }
