@@ -16,6 +16,7 @@ const nextButtonWrapper = document.createElement("div");
 const nextButton = document.createElement("img");
 const lightboxThumbnailSelectionEl = document.createElement("div");
 lightboxThumbnailSelectionEl.classList.add("selected-thumbnail");
+let currentThumbnailIndex = 0;
 
 mainImage.addEventListener("click", () => {
   lightboxEl.classList.add("active");
@@ -111,4 +112,28 @@ lightboxThumbnailWrappers.forEach((thumbnail) => {
     e.target.after(lightboxThumbnailSelectionEl);
     lightboxMainImage.src = e.target.getAttribute("srcToFullImage");
   });
+});
+
+nextButtonWrapper.addEventListener("click", () => {
+  if (currentThumbnailIndex === 3) {
+    currentThumbnailIndex = 0;
+  } else {
+    currentThumbnailIndex++;
+  }
+
+  lightboxThumbnailSelectionEl.remove();
+
+  lightboxThumbnailWrappers[currentThumbnailIndex].append(
+    lightboxThumbnailSelectionEl
+  );
+  console.log(
+    lightboxThumbnailWrappers[currentThumbnailIndex].getAttribute(
+      "srcToFullImage"
+    )
+  );
+
+  lightboxMainImage.src =
+    lightboxThumbnailWrappers[currentThumbnailIndex].getAttribute(
+      "srcToFullImage"
+    );
 });
