@@ -104,3 +104,11 @@ function renderSelectedThumbnail() {
 
   selectedThumbnail.after(lightboxThumbnailSelectionEl);
 }
+
+lightboxThumbnailWrappers.forEach((thumbnail) => {
+  thumbnail.addEventListener("click", (e) => {
+    lightboxThumbnailSelectionEl.remove();
+    e.target.after(lightboxThumbnailSelectionEl);
+    lightboxMainImage.src = e.target.getAttribute("srcToFullImage");
+  });
+});
