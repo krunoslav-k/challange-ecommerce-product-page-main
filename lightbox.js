@@ -137,3 +137,27 @@ nextButtonWrapper.addEventListener("click", () => {
       "srcToFullImage"
     );
 });
+
+previousButtonWrapper.addEventListener("click", () => {
+  if (currentThumbnailIndex === 0) {
+    currentThumbnailIndex = 3;
+  } else {
+    currentThumbnailIndex--;
+  }
+
+  lightboxThumbnailSelectionEl.remove();
+
+  lightboxThumbnailWrappers[currentThumbnailIndex].append(
+    lightboxThumbnailSelectionEl
+  );
+  console.log(
+    lightboxThumbnailWrappers[currentThumbnailIndex].getAttribute(
+      "srcToFullImage"
+    )
+  );
+
+  lightboxMainImage.src =
+    lightboxThumbnailWrappers[currentThumbnailIndex].getAttribute(
+      "srcToFullImage"
+    );
+});
