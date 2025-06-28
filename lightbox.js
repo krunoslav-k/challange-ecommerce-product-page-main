@@ -121,21 +121,7 @@ nextButtonWrapper.addEventListener("click", () => {
     currentThumbnailIndex++;
   }
 
-  lightboxThumbnailSelectionEl.remove();
-
-  lightboxThumbnailWrappers[currentThumbnailIndex].append(
-    lightboxThumbnailSelectionEl
-  );
-  console.log(
-    lightboxThumbnailWrappers[currentThumbnailIndex].getAttribute(
-      "srcToFullImage"
-    )
-  );
-
-  lightboxMainImage.src =
-    lightboxThumbnailWrappers[currentThumbnailIndex].getAttribute(
-      "srcToFullImage"
-    );
+  handleArrowButtonClick();
 });
 
 previousButtonWrapper.addEventListener("click", () => {
@@ -145,19 +131,19 @@ previousButtonWrapper.addEventListener("click", () => {
     currentThumbnailIndex--;
   }
 
+  handleArrowButtonClick();
+});
+
+function handleArrowButtonClick() {
+  const imgInsideWrapper =
+    lightboxThumbnailWrappers[currentThumbnailIndex].querySelector("img");
+  const srcToFullImage = imgInsideWrapper.getAttribute("srcToFullImage");
+
   lightboxThumbnailSelectionEl.remove();
 
   lightboxThumbnailWrappers[currentThumbnailIndex].append(
     lightboxThumbnailSelectionEl
   );
-  console.log(
-    lightboxThumbnailWrappers[currentThumbnailIndex].getAttribute(
-      "srcToFullImage"
-    )
-  );
 
-  lightboxMainImage.src =
-    lightboxThumbnailWrappers[currentThumbnailIndex].getAttribute(
-      "srcToFullImage"
-    );
-});
+  lightboxMainImage.src = srcToFullImage;
+}
