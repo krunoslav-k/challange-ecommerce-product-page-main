@@ -1,6 +1,10 @@
 const mainImage = document.querySelector(".main-image");
 const thumbnailEls = document.querySelectorAll(".thumbnail");
 const selectedThumbnailEl = document.querySelector(".selected-thumbnail");
+const decreaseQuantityIcon = document.querySelector(".decrease-quantity-icon");
+const increaseQuantityIcon = document.querySelector(".increase-quantity-icon");
+const quantityAmountEl = document.querySelector(".quantity-amount");
+let quantity = 0;
 
 thumbnailEls.forEach((thumbnail) => {
   thumbnail.addEventListener("click", (e) => {
@@ -9,3 +13,33 @@ thumbnailEls.forEach((thumbnail) => {
     mainImage.src = e.target.getAttribute("srcToFullImage");
   });
 });
+
+decreaseQuantityIcon.addEventListener("click", () => {
+  decreaseQuantity();
+  renderQuantityAmount();
+});
+
+increaseQuantityIcon.addEventListener("click", () => {
+  increaseQuantity();
+  renderQuantityAmount();
+});
+
+function decreaseQuantity() {
+  if (quantity === 0) {
+    return;
+  } else {
+    quantity--;
+  }
+}
+
+function increaseQuantity() {
+  if (quantity === 99) {
+    return;
+  } else {
+    quantity++;
+  }
+}
+
+function renderQuantityAmount() {
+  quantityAmountEl.textContent = quantity;
+}
