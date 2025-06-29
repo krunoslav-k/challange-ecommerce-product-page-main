@@ -57,6 +57,12 @@ header {
   width: 3rem;
   height: 3rem;
 }
+.avatar:hover {
+  box-sizing: border-box;
+  padding: 1px;
+  border-radius: 50%;
+  background-color: hsl(26, 100%, 55%);
+}
 
 main {
   display: flex;
@@ -217,6 +223,9 @@ main {
   border-radius: 6px;
   background-color: hsl(26, 100%, 55%);
   position: relative;
+}
+.add-to-cart-btn:hover {
+  background-color: hsl(25, 100%, 94%);
 }
 
 .cart-icon {

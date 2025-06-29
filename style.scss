@@ -40,6 +40,12 @@ header {
 .avatar {
   width: 3rem;
   height: 3rem;
+  &:hover {
+    box-sizing: border-box;
+    padding: 1px;
+    border-radius: 50%;
+    background-color: $orange;
+  }
 }
 
 // main
@@ -180,6 +186,10 @@ main {
   border-radius: 6px;
   background-color: $orange;
   position: relative;
+
+  &:hover {
+    background-color: $pale-orange;
+  }
 }
 
 .cart-icon {
