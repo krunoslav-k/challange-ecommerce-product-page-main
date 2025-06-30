@@ -35,6 +35,41 @@ header {
 .user-panel {
   @include flex;
   gap: 2rem;
+  position: relative;
+}
+
+.cart-card {
+  height: 200px;
+  width: 260px;
+  position: absolute;
+  left: -100%;
+  top: 120%;
+  border-radius: 10px;
+  box-shadow: -5px 13px 28px -4px rgba(0, 0, 0, 0.66);
+}
+
+.cart-card-heading {
+  @include flex;
+  justify-content: flex-start;
+  height: 20%;
+  box-sizing: border-box;
+  padding: 14px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-bottom: 1px solid $grayish-blue;
+}
+
+.cart-card-contents {
+  @include flex;
+  box-sizing: border-box;
+  height: 80%;
+  padding: 14px;
+}
+
+.card-card-contents-empty-text {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: $dark-grayish-blue;
 }
 
 .avatar {
