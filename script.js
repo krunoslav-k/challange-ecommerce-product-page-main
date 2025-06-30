@@ -5,6 +5,8 @@ const decreaseQuantityIcon = document.querySelector(".decrease-quantity-icon");
 const increaseQuantityIcon = document.querySelector(".increase-quantity-icon");
 const quantityAmountEl = document.querySelector(".quantity-amount");
 let quantity = 0;
+const cartEl = document.querySelector(".cart");
+const cartCardEl = document.querySelector(".cart-card");
 
 thumbnailEls.forEach((thumbnail) => {
   thumbnail.addEventListener("click", (e) => {
@@ -43,3 +45,7 @@ function increaseQuantity() {
 function renderQuantityAmount() {
   quantityAmountEl.textContent = quantity;
 }
+
+cartEl.addEventListener("click", () => {
+  cartCardEl.style.display = "block";
+});
