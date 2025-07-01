@@ -30,6 +30,26 @@ header {
 .nav-item {
   margin: 1rem;
   color: $dark-grayish-blue;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -3.05rem;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: orange;
+    opacity: 0;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+
+  &:hover {
+    color: $very-dark-blue;
+  }
 }
 
 .user-panel {
@@ -122,6 +142,21 @@ main {
 
 .thumbnail-wrapper {
   position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 14px;
+    background-color: rgba(255, 255, 255, 0.4);
+    opacity: 0;
+    pointer-events: none;
+  }
+  &:hover::after {
+    opacity: 1;
+  }
 }
 
 .selected-thumbnail {

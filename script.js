@@ -47,5 +47,9 @@ function renderQuantityAmount() {
 }
 
 cartEl.addEventListener("click", () => {
-  cartCardEl.style.display = "block";
+  if (cartCardEl.style.display === "none") {
+    cartCardEl.style.display = "block";
+  } else {
+    cartCardEl.style.display = "none";
+  }
 });
