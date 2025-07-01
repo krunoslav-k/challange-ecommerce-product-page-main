@@ -78,12 +78,12 @@ header {
   flex-direction: column;
   height: 200px;
   width: 290px;
-  position: absolute;
   left: -100%;
   top: 120%;
   border-radius: 8px;
   box-shadow: -5px 12px 28px -4px rgba(0, 0, 0, 0.15);
-  display: none;
+  display: block;
+  background-color: aqua;
 }
 
 .cart-card-heading {
