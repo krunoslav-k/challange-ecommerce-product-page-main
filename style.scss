@@ -91,10 +91,11 @@ header {
   top: -20px;
 }
 
-.card-card-contents-empty-text {
+.cart-card-contents-empty-text {
   font-size: 0.85rem;
   font-weight: 700;
   color: $dark-grayish-blue;
+  display: none;
 }
 
 .avatar {
