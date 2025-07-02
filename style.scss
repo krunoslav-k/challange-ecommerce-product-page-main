@@ -62,12 +62,14 @@ header {
   @include flex(column);
   height: 200px;
   width: 290px;
-  left: -100%;
+  position: absolute;
+  left: -130%;
   top: 120%;
   border-radius: 8px;
   box-shadow: -5px 12px 28px -4px rgba(0, 0, 0, 0.15);
   display: block;
-  background-color: aqua;
+  background-color: white;
+  z-index: 99;
 }
 
 .cart-card-heading {
@@ -84,9 +86,9 @@ header {
 
 .cart-card-contents {
   @include flex;
-  box-sizing: border-box;
   height: 80%;
-  padding: 14px;
+  position: relative;
+  top: -20px;
 }
 
 .card-card-contents-empty-text {
