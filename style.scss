@@ -98,6 +98,83 @@ header {
   display: none;
 }
 
+//full cart
+
+.cart-card-contents-wrapper {
+  @include flex(column);
+  justify-content: space-around;
+  height: 100%;
+  padding: 0 16px 0 16px;
+}
+
+.cart-item {
+  @include flex;
+}
+
+.cart-item-thumbnail-wrapper {
+  height: 60px;
+  width: 60px;
+  object-fit: cover;
+}
+
+.cart-item-thumbnail {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.cart-item-text {
+  @include flex(column);
+  align-items: flex-start;
+  justify-content: space-evenly;
+  height: 80%;
+  width: 100%;
+  margin: 0 10px 0 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: $grayish-blue;
+}
+
+.cart-item-prices {
+  @include flex;
+}
+
+.cart-item-single-price {
+  margin-right: 0.6rem;
+  &::after {
+    content: "€";
+  }
+}
+
+.cart-item-quantity {
+  margin-right: 0.6rem;
+  &::before {
+    content: "x ";
+  }
+}
+
+.cart-item-final-price {
+  font-weight: 900;
+  &::after {
+    content: "€";
+  }
+}
+
+.cart-checkout-button {
+  height: 30%;
+  width: 100%;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  background-color: $orange;
+  position: relative;
+
+  &:hover {
+    background-color: $pale-orange;
+  }
+}
+
 .avatar {
   width: 3rem;
   height: 3rem;
